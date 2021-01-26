@@ -4,5 +4,5 @@ module.exports.run = (msg,bot,args)=>{
 }
     module.exports.help={
         "name":"Ping",
-        "description":"Pokazuje aktualny ping bota"
+        "description":"Pokazuje aktualny ping bota. `Ping"
     }

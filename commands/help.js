@@ -7,7 +7,7 @@ module.exports.run = (msg,bot,args)=>{
         embed.addField(command.help.name, command.help.description)
     });
 
-    embed.setTitle("Help")
+    embed.setTitle("Pomoc")
     embed.setColor("#34eba4")
     msg.channel.send(embed)
     

@@ -21,5 +21,5 @@ module.exports.run = (msg,bot,args)=>{
 }
 module.exports.help ={
     "name":"Kot",
-    "description":"Wyświetla zdjęcia gorących kotów w twojej okolicy"
+    "description":"Wyświetla zdjęcia gorących kotów w twojej okolicy. `Kot (1-3)"
 }

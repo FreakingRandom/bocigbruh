@@ -34,5 +34,5 @@ module.exports.run = (msg,bot,args)=>{
 
 module.exports.help ={
     "name":"Dailyomen",
-    "description":"Dzienna wróżba"
+    "description":"Dzienna wróżba. `Dailyomen"
 }

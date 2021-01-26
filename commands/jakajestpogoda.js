@@ -27,5 +27,5 @@ module.exports.run = (msg,bot,args)=>{
 }
 module.exports.help = {
     "name":"Pogodynka",
-    "description":"Prognoza pogody"
+    "description":"Prognoza pogody. `Pogodynka"
 }
