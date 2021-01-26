@@ -15,6 +15,6 @@ module.exports.run = (msg,bot,args)=>{
 
 
 module.exports.help ={
-    "name":"stealimg",
-    "description":"wyświetla zdjęcia gorących crewmateow w twojej okolicy"
+    "name":"Stealimg",
+    "description":"Wyświetla zdjęcia gorących crewmateow w twojej okolicy"
     }

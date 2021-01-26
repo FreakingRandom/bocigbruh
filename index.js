@@ -23,6 +23,10 @@ function commandregister(){
         })
     })
 }
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+    
+}
 bocig.on("ready",()=>{
     console.log("bot is ready")
     bocig.user.setActivity("Miłego pobytu na serwerze",{type:"PLAYING"})
@@ -40,7 +44,7 @@ bocig.on("message",(msg)=>{
     if(content.startsWith(prefix)){
     
         const userInput = content.split(" ")
-        const commandname = userInput[0].slice(prefix.length)
+        const commandname = capitalizeFirstLetter(userInput[0].slice(prefix.length))
         const args = userInput.slice(1)
         const command = bocig.commands.get(commandname)
         if(command!= undefined){

@@ -1,16 +1,18 @@
 const discord = require("discord.js")
 module.exports.run = (msg,bot,args)=>{
-    const embed2 = new discord.MessageEmbed()
-    embed2.setTitle("Help")
-    embed2.addFields(
-    {name:'jakajestpogoda',value:"Wyświetla pogode jeśli dopiszesz 1 lub 2"},
-    {name:"kot", value:"Wyświetla 3 zdjęcia kotów, jeśli podasz liczbę od 1 do 3"},
-    {name:"ponger",value:"testowa komenda"},
-    {name:"ping",value:"Wyświetla aktualny ping bota"})
-    embed2.setColor ("#e6a309")
-    msg.channel.send(embed2)
+    const embed = new discord.MessageEmbed()
+    bot.commands.forEach(command => {
+        console.log(command.help.name)
+        console.log(command.help.description)
+        embed.addField(command.help.name, command.help.description)
+    });
+
+    embed.setTitle("Help")
+    embed.setColor("#34eba4")
+    msg.channel.send(embed)
+    
 }
 module.exports.help={
-    "name":"help",
+    "name":"Help",
     "description":"Wyświetla wszystkie komedny i ich użycie"
 }
