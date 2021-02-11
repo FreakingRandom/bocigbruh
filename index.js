@@ -30,9 +30,9 @@ function capitalizeFirstLetter(string) {
 }
 bocig.on("ready",()=>{
     //UserData.createUserData("robuxo")
-    const UserCum = UserData.getUserData("sex")
-    UserData.setUserData("sex","sex","poies")
-    console.log(UserCum.Wins) 
+    //const UserCum = UserData.getUserData("sex")
+    //UserData.setUserData("sex","sex","poies")
+    //console.log(UserCum.Wins) 
     console.log("bot is ready")
     bocig.user.setActivity("Miłego pobytu na serwerze",{type:"PLAYING"})
     commandregister()
