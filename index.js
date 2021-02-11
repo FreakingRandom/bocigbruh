@@ -1,4 +1,5 @@
 const fs = require("fs")
+const UserData = require("./userdata.js")
 const configFile = fs.readFileSync("config.json")
 const config = JSON.parse(configFile)
 const token = config.token
@@ -24,15 +25,20 @@ function commandregister(){
     })
 }
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     
 }
 bocig.on("ready",()=>{
+    //UserData.createUserData("robuxo")
+    const UserCum = UserData.getUserData("sex")
+    UserData.setUserData("sex","sex","poies")
+    console.log(UserCum.Wins) 
     console.log("bot is ready")
     bocig.user.setActivity("Miłego pobytu na serwerze",{type:"PLAYING"})
     commandregister()
 })
 bocig.on("message",(msg)=>{
+    UserData.setUserData(msg.author.id,"lastmsg",msg.content)
     if(msg.mentions.everyone){
         msg.delete()
     }
