@@ -33,5 +33,5 @@ module.exports.run=(msg,bot,args)=>{
 
 module.exports.help= {
     "name":"Balance",
-    "description":"Pokazuje aktualny balans użytkownika"
+    "description":"Pokazuje aktualny balans użytkownika. `balance"
 }
