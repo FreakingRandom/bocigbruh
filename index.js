@@ -39,10 +39,10 @@ bocig.on("ready",()=>{
 })
 bocig.on("message",(msg)=>{
     UserData.setUserData(msg.author.id,"lastmsg",msg.content)
-    if(msg.mentions.everyone){
+    /*if(msg.mentions.everyone){
         msg.delete()
     }
-    
+    */
     
     console.log(msg.content)
     console.log(msg.author.username+":"+msg.content)
