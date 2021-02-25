@@ -20,9 +20,9 @@ module.exports.run = (msg, bot, args) => {
             case "1":
                 if (money >= 5000) {
                     userdata.setUserData(msg.member.id,"money",money - 5000)
-                    rankup.rankup(msg.member)
+                    const ranga = rankup.rankup(msg.member)
                     setTimeout(()=>{
-                        msg.channel.send("Zakupiłeś Rank-up. Twój balans wynosi teraz "+userdata.getUserData(msg.member.id).money)
+                        msg.channel.send(`Zakupiłeś ${ranga}.Twój balans wynosi teraz ${userdata.getUserData(msg.member.id).money}.`);
                     },20);
                     break;
                 } else {
