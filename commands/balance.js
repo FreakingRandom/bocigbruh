@@ -3,9 +3,15 @@ const discord = require("discord.js")
 
 module.exports.run=(msg,bot,args)=>{
     console.log("aaaaaaaaaaaaaaaaaa")
+    const embed = new discord.MessageEmbed()
     let zczytywanko = userdata.getUserData(msg.member.id)
     let money = zczytywanko.money
     console.log(money)
+
+    if(money<=-1){
+        console.log("aaaaaaaaaa")
+        embed.setFooter("Popadłeś w długi. Zacznij pracować, aby z nich wyjść!")
+    }
     
     if(money==undefined){
         money = 0
@@ -18,14 +24,14 @@ module.exports.run=(msg,bot,args)=>{
     }
     else{
         console.log(money)
-        const embed = new discord.MessageEmbed()
+        
         embed.setTitle("Balans :dollar:")
         embed.addField("Dostępne środki",money)
         embed.setColor("#abf230")
         msg.channel.send(embed)
     }
 
-    
+   
         
 }
 
