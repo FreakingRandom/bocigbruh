@@ -11,15 +11,10 @@ const bocig = new discord.Client()
 bocig.commands = new discord.Collection()
 function commandregister(){
     fs.readdir("./commands/",(error, files)=>{
-        console.log(files)
         files.forEach((file)=>{
-            console.log(file)
             const commandname = file.split(".")[0]
-            console.log(commandname)
             const path = './commands/'+commandname
-            console.log(path)
             const pather = require(path)
-            console.log(pather.help)
             bocig.commands.set(pather.help.name,pather)
         })
     })
@@ -44,8 +39,7 @@ bocig.on("message",(msg)=>{
     }
     */
     
-    console.log(msg.content)
-    console.log(msg.author.username+":"+msg.content)
+    
     const content = msg.content
     if(content.startsWith(prefix)){
     

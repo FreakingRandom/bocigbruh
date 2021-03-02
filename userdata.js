@@ -14,6 +14,5 @@ module.exports.getUserData=(UserID)=>{
 module.exports.setUserData=(userID,name,value)=>{
     let UserCum2 = module.exports.getUserData(userID)
     UserCum2[name] = value
-    console.log(UserCum2)
     fs.writeFileSync("./Userdata/"+ userID+".json",JSON.stringify(UserCum2))
 }

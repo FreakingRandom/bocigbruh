@@ -1,7 +1,6 @@
 const discord = require("discord.js")
 const options = ["kamień","papier","nożyce"]
 module.exports.run = (msg,bot,args)=>{
-    console.log(options.join(","))
     const botOption = options[Math.round(Math.random()*2)] 
     const winCondition ={"nożyce":"kamień","papier":"nożyce","kamień":"papier"}
     const name2emoji = {"nożyce":":scissors:","kamień":":rock:","papier":":roll_of_paper:"}

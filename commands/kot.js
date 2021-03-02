@@ -1,6 +1,5 @@
 const discord = require("discord.js")
 module.exports.run = (msg,bot,args)=>{
-    console.log(args)
     if(args.length!=1){
         msg.reply("kurwa idioto wpisz liczbe a nie pierdolisz mi z komendami kurwa to tez naprawilem.")
         return;
@@ -17,7 +16,6 @@ module.exports.run = (msg,bot,args)=>{
     else if (parseInt(args[0])> 3 ){
         msg.channel.send("Zabrakło budżetu na koty")
     }   
-    console.log(msg)
 }
 module.exports.help ={
     "name":"Kot",

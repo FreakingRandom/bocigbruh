@@ -5,7 +5,6 @@ module.exports.run = (msg,bot,args)=>{
         msg.channel.send(msg.author.username + " wystarczy tych wróżb na dzisiaj.");
 } else {
     const luck = Math.round(Math.random()*5)+1
-    console.log(luck)
     switch(luck){
         case 1:
             msg.reply("Spotkasz miłość życia")

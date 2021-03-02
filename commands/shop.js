@@ -16,7 +16,6 @@ module.exports.run = (msg, bot, args) => {
         		msg.channel.send(embed);
     }
     else{
-        		console.log(args[0]);
         		switch (args[0]) {
             case '1':
                 		if (money >= 500) {

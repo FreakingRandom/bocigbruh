@@ -9,7 +9,6 @@ module.exports.run = (msg, bot, args) => {
     const UserID = msg.author.id;
     const zczytywanko = userdata.getUserData(msg.member.id);
     const money = zczytywanko.money;
-    console.log('pee pee poo poo');
     if (userPlaying.includes(msg.author.id)) {
         msg.reply('Moge wygenerować tylko 1 ruletkę na raz. Proszę zaczekaj chwilę.');
 

@@ -1,7 +1,6 @@
 const discord = require("discord.js")
 module.exports.run = (msg,bot,args)=>{
     const luck = Math.round(Math.random()*5)+1
-    console.log(luck)
     switch(luck){
         case 1:
             msg.channel.send("Przewidywane opady gradu :cloud_rain:") 
