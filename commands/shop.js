@@ -18,7 +18,7 @@ module.exports.run = (msg, bot, args) => {
     else{
         		switch (args[0]) {
             case '1':
-                		if (money >= 500) {
+                		if (money >= 5000) {
                     		userdata.setUserData(msg.member.id,'money',money - 5000);
                     		const ranga = rankup.rankup(msg.member);
                     		const ranganame = ranga.name;
