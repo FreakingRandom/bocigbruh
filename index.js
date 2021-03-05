@@ -31,7 +31,7 @@ bocig.on("ready",()=>{
     commandregister()
 })
 bocig.on("message",(msg)=>{
-    UserData.setUserData(msg.author.id,"lastmsg",msg.content)
+    //UserData.setUserData(msg.author.id,"lastmsg",msg.content)
     /*if(msg.mentions.everyone){
         msg.delete()
     }
