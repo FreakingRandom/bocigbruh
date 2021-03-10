@@ -37,7 +37,7 @@ module.exports.run = (msg, bot, args) => {
                     const ranga = rankup.rankup(msg.member);
                     const ranganame = ranga.name;
                     setTimeout(() => {
-                        msg.channel.send(`Zakupiłeś ${ranganame}.Twój balans wynosi teraz ${userdata.getUserData(msg.member.id).money}.`);
+                        msg.channel.send(`Zakupiłeś ${ranganame}.Twój balans wynosi teraz ${userdata.getUserData(msg.member.id).money} :dollar: .`);
                     }, 20);
 
                 } else {
