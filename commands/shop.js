@@ -8,7 +8,7 @@ module.exports.run = (msg, bot, args) => {
     //args.length długość argumentów
     if (args.length == 0) {
 		const poziomkop = userdata.getUserData(msg.member.id).koparka || 0
-        let cenakoparki = 15000+250*poziomkop*poziomkop
+        let cenakoparki = 30000+1000*poziomkop*poziomkop
 	{
 		cenakoparki = cenakoparki.toString()
 		cenakoparki = cenakoparki.replaceAll("0",":zero:")
@@ -31,7 +31,7 @@ module.exports.run = (msg, bot, args) => {
         msg.channel.send(embed);
     } else {
         switch (args[0]) {
-            case '1':
+           /* case '1':
                 if (money >= 5000) {
                     userdata.setUserData(msg.member.id, 'money', money - 5000);
                     const ranga = rankup.rankup(msg.member);
@@ -44,9 +44,9 @@ module.exports.run = (msg, bot, args) => {
                     msg.channel.send('Nie masz wystarczająco pieniędzy');
                 }
                 break;
-            case '3':
+           */ case '3':
 				const poziomkop = userdata.getUserData(msg.member.id).koparka || 0
-                const cenakoparki = 15000+250*poziomkop*poziomkop
+                const cenakoparki = 30000+1000*poziomkop*poziomkop
                 if (money >= cenakoparki) {
                     userdata.setUserData(msg.member.id, "money", money - cenakoparki)
                     
