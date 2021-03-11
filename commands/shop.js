@@ -24,9 +24,9 @@ module.exports.run = (msg, bot, args) => {
 	}
         const embed = new discord.MessageEmbed();
         embed.setTitle('Sklepik :shopping_cart:');
-        embed.addField('1 Rank-up  :five::zero::zero::zero: :dollar: ', 'Dostajesz range wyżej');
-        embed.addField('2 Bilet na loterie  :one::zero::dollar: ', 'W.I.P');
-        embed.addField(`3 Koparka kryptowalut ${cenakoparki} :dollar: `, 'W.I.P');
+        embed.addField('ID: :one: Rank-up  :regional_indicator_o::regional_indicator_u::regional_indicator_t: :regional_indicator_o::regional_indicator_f: :regional_indicator_s::regional_indicator_t::regional_indicator_o::regional_indicator_c::regional_indicator_k: ', 'Brak towaru');
+        embed.addField('ID: :two: Bilet na loterie  :one::zero::dollar: ', 'W.I.P');
+        embed.addField(`ID: :three: Koparka kryptowalut ${cenakoparki} :dollar: `, 'Zbuduj swoją własną kopalnie kryptowalut');
         embed.setColor('#cc2c16');
         msg.channel.send(embed);
     } else {
