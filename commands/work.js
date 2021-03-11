@@ -34,7 +34,7 @@ module.exports.run = (msg, bot, args) => {
             const collector = msg.channel.createMessageCollector(filter, { time: 15000, max:1});
             collector.on('collect', m => {
                 if (m.content==odpowiedz){
-                    const zarobek = Math.round(Math.random() * 500 + 1000)
+                    const zarobek = Math.round(Math.random() * 500 + 750)
                     userdata.setUserData(UserID, "money", money + zarobek)
                     msg.channel.send("Ciężko pracowałeś i zarobiłeś " + zarobek + " :dollar:")
                 
