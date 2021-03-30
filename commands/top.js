@@ -14,14 +14,15 @@ module.exports.run=(msg,bot,args)=>{
             data2.push(data)
             
         })
-        data2 = data2.filter(a=>a!=undefined&&a.koparka!=undefined&&a.money!=undefined)
+        
         switch(args[0]){
         
         case 'koparka':
+            data2 = data2.filter(a=>a!=undefined&&a.koparka!=undefined)
             const embed = new discord.MessageEmbed()
             embed.setTitle('Użytkownicy z najbardziej ulepszonymi koparkami')
+            embed.setThumbnail('http://cdn.benchmark.pl/uploads/article/78531/MODERNICON/e53991888ed9aa0f4bbb693a449a6bde130b9575.jpg')
             sorted = data2.sort((a,b)=>a.koparka-b.koparka).reverse()
-            
             const enmebde = await msg.channel.send(embed)
             const best = await msg.guild.members.fetch(sorted[0].id) 
             embed.setColor(best.displayHexColor)
@@ -41,8 +42,10 @@ module.exports.run=(msg,bot,args)=>{
             
         break;
         case 'money':
+            data2 = data2.filter(a=>a!=undefined&&a.money!=undefined)
             const embedd = new discord.MessageEmbed()
             embedd.setTitle('Użytkownicy z największą ilością pieniędzy')
+            embedd.setThumbnail('https://images.emojiterra.com/google/android-11/512px/1f4b5.png')
             sorted = data2.sort((a,b)=>a.money-b.money).reverse()
             
             const enmebded = await msg.channel.send(embedd)
