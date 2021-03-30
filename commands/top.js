@@ -63,7 +63,16 @@ module.exports.run=(msg,bot,args)=>{
             
             
         break;
-    }
+        default:
+            const embededed = new discord.MessageEmbed()
+            embededed.setTitle(":star: Dostępne są 2 rankingi :star:")
+            embededed.addFields(
+                { name: 'Money', value: 'Największa ilość pieniędzy',inline: true },
+                { name: 'Koparka', value: 'Najbardziej ulepszona koparka kryptowalut', inline: true },)
+                embededed.setThumbnail('https://emoji.gg/assets/emoji/1238_Trophy.png') 
+                msg.channel.send(embededed)
+            }
+           
     })
    
 }
@@ -76,5 +85,5 @@ module.exports.run=(msg,bot,args)=>{
 
 module.exports.help = {
     'name': 'Top',
-    'description': 'Wyświetla najlepszych użytkowników.'
+    'description': 'Wyświetla ranking użytkowników.'
 };
