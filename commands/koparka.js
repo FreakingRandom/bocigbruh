@@ -7,8 +7,9 @@ module.exports.run = (msg, bot, args) => {
     const czasuplyniety = (LastMined.getTime() - new Date().getTime()) / 1000
     const money = userdata.getUserData(msg.author.id).money
 
-    if (lvl == 0) {
+    if (lvl == 0||lvl == undefined) {
         msg.channel.send(`Do użycia tej komendy wymagana jest koparka`)
+        userdata.setUserData(msg.member.id,"koparka",0)
     } else {
         const maxmoney = 1000 + lvl * 750
         let iloscpieniedzywkoparce = Math.round(500 + czasuplyniety * (czasuplyniety / (Math.pow(4,5 / lvl))))
