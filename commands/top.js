@@ -6,7 +6,7 @@ const { ENETDOWN } = require("constants")
 module.exports.run=(msg,bot,args)=>{
     let data2 = []
     let sorted = []
-    fs.readdir("./userdata",async(error, files)=>{
+    fs.readdir("./Userdata",async(error,files)=>{
         files.forEach((file)=>{
             const id = file.split('.')[0]
             let data = userdata.getUserData(id)
