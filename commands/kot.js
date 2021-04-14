@@ -1,7 +1,7 @@
 const discord = require("discord.js")
 module.exports.run = (msg,bot,args)=>{
     if(args.length!=1){
-        msg.reply("kurwa idioto wpisz liczbe a nie pierdolisz mi z komendami kurwa to tez naprawilem.")
+        msg.reply("Proszę podaj tylko jeden argument")
         return;
     }
     else if (args[0]== "1"){

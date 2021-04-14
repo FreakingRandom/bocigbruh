@@ -62,7 +62,7 @@ module.exports.run = (msg, bot, args) => {
                     switch (finish) {
                     case options[0]:
                         msg.member.kick('U died! Respawn?');
-                        msg.channel.send('Rzućcie mu link: https://discord.gg/gWtdgKQBbq');
+                        msg.channel.send('Rzućcie mu link: https://discord.gg/y3JApZSpYd');
                         embed.setDescription(`You died :skull: ${options[0]}`);
                         break;
                     case options[1]:
