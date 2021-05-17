@@ -16,8 +16,9 @@ module.exports.run = (msg,bot,args)=>{
     else if (parseInt(args[0])> 3 ){
         msg.channel.send("Zabrakło budżetu na koty")
     }   
+    
 }
 module.exports.help ={
     "name":"Kot",
-    "description":"Wyświetla zdjęcia gorących kotów w twojej okolicy. `Kot (1-3)"
+    "description":"Wyświetla zdjęcia kotów. `Kot (1-3)"
 }
