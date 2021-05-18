@@ -31,8 +31,8 @@ function capitalizeFirstLetter(string) {
 bocig.on("ready", () => {
 
     console.log("bot is ready")
-    bocig.user.setActivity("To the server owner", {
-        type: "LISTENING"
+    bocig.user.setActivity("Have a great day", {
+        type: "PLAYING"
     })
     commandregister()
 })
