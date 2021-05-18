@@ -25,6 +25,7 @@ module.exports.run = (msg, bot, args) => {
         const embed = new discord.MessageEmbed();
         embed.setTitle('Sklepik :shopping_cart:');
         embed.addField('ID: :one: Rank-up  :regional_indicator_o::regional_indicator_u::regional_indicator_t: :regional_indicator_o::regional_indicator_f: :regional_indicator_s::regional_indicator_t::regional_indicator_o::regional_indicator_c::regional_indicator_k: ', 'Brak towaru');
+        //Zrobic jakis wzor ktory NIE AŻ TAK ostro idzie w góre zaczynamy od 1 miliona  zeby bylo jakies osiagniecie
         embed.addField('ID: :two: Bilet na loterie  :one::zero::dollar: ', 'W.I.P');
         embed.addField(`ID: :three: Koparka kryptowalut ${cenakoparki} :dollar: `, 'Zbuduj swoją własną kopalnie kryptowalut');
         embed.setColor('#cc2c16');

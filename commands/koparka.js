@@ -12,7 +12,7 @@ module.exports.run = (msg, bot, args) => {
         userdata.setUserData(msg.member.id,"koparka",0)
     } else {
         const maxmoney = 1000 + lvl * 750
-        let iloscpieniedzywkoparce = Math.round(500 + czasuplyniety * (czasuplyniety / (Math.pow(4,5 / lvl))))
+        let iloscpieniedzywkoparce = Math.round(500 + 0.1 * czasuplyniety * (czasuplyniety / (Math.pow(4,5 / lvl))))
         iloscpieniedzywkoparce = iloscpieniedzywkoparce >= maxmoney ? maxmoney : iloscpieniedzywkoparce
         switch (args[0]) {
             case 'collect':
