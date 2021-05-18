@@ -12,7 +12,7 @@ module.exports.perms=(member)=>{
     if(member.id == '285025528442912778'||member.id == '330768055468818435'){
         lvl = 5 
     }
-    console.log(lvl)
+    
 }
 
 
