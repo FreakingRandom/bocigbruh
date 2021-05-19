@@ -15,9 +15,9 @@ module.exports.run = (msg, bot, args) => {
         money = 0
         zczytywanko.money = 0
         userdata.setUserData(msg.member.id, "money", money)
-        msg.channel.send("Zaczekaj przypisujemy konto bankowe...")
+        msg.channel.send("Wait we're currently assigning your bank account.")
         setTimeout(() => {
-            msg.channel.send("Wpisz komendę jeszcze raz")
+            msg.channel.send("Type the command again.")
         }, 3000);
     } else {
         if (nowtime >= jes) {
@@ -29,23 +29,23 @@ module.exports.run = (msg, bot, args) => {
             const liczba1 = Math.round((Math.random()+1)*4)
             const liczba2 = Math.round((Math.random()+1)*4)
             const odpowiedz = liczba1+liczba2
-            msg.reply(`Anty-macro. Prosze odpowiedz na pytanie.\n       Ile jest ${liczba1} + ${liczba2}?`)
+            msg.reply(`Anti-macro. Please answer this question.\n       What is ${liczba1} + ${liczba2}?`)
             const filter = m => m.author.id == msg.author.id;
             const collector = msg.channel.createMessageCollector(filter, { time: 15000, max:1});
             collector.on('collect', m => {
                 if (m.content==odpowiedz){
                     const zarobek = Math.round(Math.random() * 500 + 750)
                     userdata.setUserData(UserID, "money", money + zarobek)
-                    msg.channel.send("Ciężko pracowałeś i zarobiłeś " + zarobek + " :dollar:")
+                    msg.channel.send(`You worked hard and got ${zarobek} :dollar:.`)
                 
                 }
                 else{
-                    msg.reply(`jest głupi i nie umie liczyć`)
+                    msg.reply(`That's incorrect.`)
                 }
             });
             
         } else {
-            msg.channel.send("Jesteś zbyt zmęczony, żeby pracować. :sleeping:")
+            msg.channel.send("You are to tired to work. :sleeping:")
         }
     }
 

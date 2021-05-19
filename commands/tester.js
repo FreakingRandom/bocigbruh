@@ -5,7 +5,7 @@ module.exports.run=async(msg,bot,args)=>{
     
     const mentioned = msg.mentions.members.first()
     if(mentioned == undefined){
-        msg.reply(`Podaj argumenty!`)
+        msg.reply(`Provide right arguments!`)
         return;
     }
     const mentionedID = mentioned.id
@@ -14,12 +14,12 @@ module.exports.run=async(msg,bot,args)=>{
     if(permissions.perms(msg.member) == 5){
         if(userdata.getUserData(mentionedID).Tester == 'False'){
             userdata.setUserData(mentionedID.toString(),'Tester','True')
-            msg.reply(`Dodano ${mentioned} do listy testerów.`)
+            msg.reply(`Added ${mentioned} to the tester list.`)
             mentioned.roles.add(role)
         }
         else{
             userdata.setUserData(mentionedID.toString(),`Tester`,`False`)
-            msg.reply(`Usunięto ${mentioned} z listy testerów`)
+            msg.reply(`Deleted ${mentioned} from the tester list.`)
             mentioned.roles.remove(role)
         }
     }
@@ -29,6 +29,6 @@ module.exports.run=async(msg,bot,args)=>{
 }
 module.exports.help={
     'name':'Tester',
-    'description':'Komenda dla administratora'
+    'description':'Administrator command.'
 }
 //autistic screeching

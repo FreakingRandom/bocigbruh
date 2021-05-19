@@ -17,10 +17,10 @@ module.exports.run=(msg,bot,args)=>{
         
         switch(args[0]){
         
-        case 'koparka':
+        case 'crypto':
             data2 = data2.filter(a=>a!=undefined&&a.koparka!=undefined)
             const embed = new discord.MessageEmbed()
-            embed.setTitle('Użytkownicy z najbardziej ulepszonymi koparkami')
+            embed.setTitle('Users with the most upgraded cryptominer')
             embed.setThumbnail('http://cdn.benchmark.pl/uploads/article/78531/MODERNICON/e53991888ed9aa0f4bbb693a449a6bde130b9575.jpg')
             sorted = data2.sort((a,b)=>a.koparka-b.koparka).reverse()
             const enmebde = await msg.channel.send(embed)
@@ -44,7 +44,7 @@ module.exports.run=(msg,bot,args)=>{
         case 'money':
             data2 = data2.filter(a=>a!=undefined&&a.money!=undefined)
             const embedd = new discord.MessageEmbed()
-            embedd.setTitle('Użytkownicy z największą ilością pieniędzy')
+            embedd.setTitle('Richest users')
             embedd.setThumbnail('https://images.emojiterra.com/google/android-11/512px/1f4b5.png')
             sorted = data2.sort((a,b)=>a.money-b.money).reverse()
             
@@ -68,10 +68,10 @@ module.exports.run=(msg,bot,args)=>{
         break;
         default:
             const embededed = new discord.MessageEmbed()
-            embededed.setTitle(":star: Dostępne są 2 rankingi :star:")
+            embededed.setTitle(":star: 2 Rankings available :star:")
             embededed.addFields(
-                { name: 'Money', value: 'Największa ilość pieniędzy',inline: true },
-                { name: 'Koparka', value: 'Najbardziej ulepszona koparka kryptowalut', inline: true },)
+                { name: 'Money', value: 'Shows the richest users.',inline: true },
+                { name: 'Crypto', value: 'Shows users with the most upgraded cryptominer', inline: true },)
                 embededed.setThumbnail('https://emoji.gg/assets/emoji/1238_Trophy.png') 
                 msg.channel.send(embededed)
             }

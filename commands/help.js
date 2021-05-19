@@ -5,12 +5,12 @@ module.exports.run = (msg,bot,args)=>{
         embed.addField(command.help.name, command.help.description)
     });
 
-    embed.setTitle("Pomoc")
+    embed.setTitle("Help")
     embed.setColor("#34eba4")
     msg.channel.send(embed)
     
 }
 module.exports.help={
     "name":"Help",
-    "description":"Wyświetla wszystkie komedny i ich użycie"
+    "description":"Shows commands and their use."
 }

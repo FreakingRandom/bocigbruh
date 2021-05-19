@@ -23,11 +23,11 @@ module.exports.run = (msg, bot, args) => {
 		cenakoparki = cenakoparki.replaceAll("9",":nine:")
 	}
         const embed = new discord.MessageEmbed();
-        embed.setTitle('Sklepik :shopping_cart:');
-        embed.addField('ID: :one: Rank-up  :regional_indicator_o::regional_indicator_u::regional_indicator_t: :regional_indicator_o::regional_indicator_f: :regional_indicator_s::regional_indicator_t::regional_indicator_o::regional_indicator_c::regional_indicator_k: ', 'Brak towaru');
+        embed.setTitle('Shop :shopping_cart:');
+        embed.addField('ID: :one: Rank-up  :regional_indicator_o::regional_indicator_u::regional_indicator_t: :regional_indicator_o::regional_indicator_f: :regional_indicator_s::regional_indicator_t::regional_indicator_o::regional_indicator_c::regional_indicator_k: ', 'W.I.P');
         //Zrobic jakis wzor ktory NIE AŻ TAK ostro idzie w góre zaczynamy od 1 miliona  zeby bylo jakies osiagniecie
-        embed.addField('ID: :two: Bilet na loterie  :one::zero::dollar: ', 'W.I.P');
-        embed.addField(`ID: :three: Koparka kryptowalut ${cenakoparki} :dollar: `, 'Zbuduj swoją własną kopalnie kryptowalut');
+        embed.addField('ID: :two: Lottery ticket  :one::zero::dollar: ', 'W.I.P');
+        embed.addField(`ID: :three: Cryptominer ${cenakoparki} :dollar: `, 'Build your own crypto farm');
         embed.setColor('#cc2c16');
         msg.channel.send(embed);
     } else {
@@ -53,16 +53,16 @@ module.exports.run = (msg, bot, args) => {
                     
                     userdata.setUserData(msg.member.id, "koparka", poziomkop + 1)
                     if (poziomkop == 0) {
-                        msg.channel.send("Zakupiłeś koparke kryptowalut za "+ cenakoparki+ " :dollar:")
+                        msg.reply(`You've bought cryptominer for ${cenakoparki} :dollar:`)
 						userdata.setUserData(msg.author.id, "LastMined", new Date().toString())
                     } else {
                         const lvlup = (poziomkop + 1).toString()
 						
-                        msg.channel.send("Ulepszyłeś poziom swojej koparki do poziomu " + lvlup+" za "+ cenakoparki+ " :dollar:" )
+                        msg.reply(`You've upgraded your cryptominer level to ${lvlup} for ${cenakoparki} :dollar:` )
                     }
                 }
 				else {
-					msg.channel.send("Nie masz wystarczająco pieniędzy");
+					msg.reply("You don't have enough :dollar:");
 				}
                 break;
         }
@@ -72,5 +72,5 @@ module.exports.run = (msg, bot, args) => {
 
 module.exports.help = {
     'name': 'Shop',
-    'description': 'Pokazuje towary dostępne w sklepie. `Shop'
+    'description': 'Buy stuff with bot currency'
 };

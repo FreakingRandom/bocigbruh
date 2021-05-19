@@ -12,5 +12,5 @@ module.exports.run=(msg,bot,args)=>{
 }
 module.exports.help={
     'name':'Restart',
-    'description':'Komenda dla administratorów'
+    'description':'Administrator command.'
 }

@@ -21,11 +21,11 @@ module.exports.run=(msg,bot,args)=>{
             embed.setColor(`#2137FF`)
             embed.setTitle(`Dungeons`)
             embed.setURL("https://ujeb.se/gQdpE")
-            embed.setDescription(`Link do wiki ^`)
+            embed.setDescription(`Wiki Link ^`)
             embed.addFields(
-                { name: 'Explore', value: 'Pozwala wyruszyć na polowanie i zdobywanie łupów',inline: true },
-                { name: 'Inventory', value: 'Pokazuje aktualny ekwipunek', inline: true },
-                { name: 'Class', value: 'Pozwala zmienić klasę postaci', inline: true },)
+                { name: 'Explore', value: 'Allows to start your adventure and get loot.',inline: true },
+                { name: 'Inventory', value: 'Shows your current inventory.', inline: true },
+                { name: 'Class', value: 'Allows to change your class.', inline: true },)
             embed.setImage('https://cdn.discordapp.com/attachments/746110885692571740/819252470937157713/unknown.png')
             embed.setThumbnail(`https://cdn.discordapp.com/attachments/746110885692571740/819252470937157713/unknown.png`)
             msg.channel.send(embed)
