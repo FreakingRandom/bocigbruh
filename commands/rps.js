@@ -1,38 +1,38 @@
 const discord = require("discord.js")
-const options = ["kamień","papier","nożyce"]
+const options = ["rock","paper","scissors"]
 const userdata = require("../userdata")
 
 module.exports.run = (msg,bot,args)=>{
     const botOption = options[Math.round(Math.random()*2)] 
-    const winCondition ={"nożyce":"kamień","papier":"nożyce","kamień":"papier"}
-    const name2emoji = {"nożyce":":scissors:","kamień":":rock:","papier":":roll_of_paper:"}
+    const winCondition ={"scissors":"rock","paper":"scissors","rock":"paper"}
+    const name2emoji = {"scissors":":scissors:","rock":":rock:","paper":":roll_of_paper:"}
     const zczytywansko = userdata.getUserData(msg.author.id)
     const money = zczytywansko.money
     const zarobek = Math.round(Math.random() * 500 + 150)
     const strata = Math.round(Math.random() * -500 - 150)
     if (args.length!=1){
-        msg.channel.send("Proszę podaj czym chcesz zagrać")
+        msg.channel.send("Please enter valid arguments.")
         return;
     }
     const userOption = args[0].toLowerCase()
     if (!options.includes(userOption)){
-        msg.channel.send("Wybierz kamień, papier lub nożyce!")
+        msg.channel.send("Choose: Rock, paper or scissors.")
         return;
     }
     if (botOption == userOption){
-        msg.channel.send("Remis :flag_white:")
+        msg.channel.send("Draw :flag_white:")
     }
     else if (winCondition[botOption] == userOption){
         userdata.setUserData(msg.author.id,"money", money + zarobek )
-        msg.channel.send("Bot wybrał "+name2emoji[botOption]+". "+msg.author.username+" wygrał i zdobył "+ zarobek)
+        msg.channel.send(`Bot chose ${name2emoji[botOption]}. ${msg.author.username} won ${zarobek} :dollar:`)
         
     }
     else{
         userdata.setUserData(msg.author.id,"money", money + strata )
-        msg.channel.send("Bot wybrał "+name2emoji[botOption]+". "+msg.author.username+" przegrał i stracił "+ strata)
+        msg.channel.send(`Bot chose ${name2emoji[botOption]}. ${msg.author.username} lost  ${strata} :dollar:`)
     }
 }
 module.exports.help={
     "name":"Rps",
-    "description":"Gra w kamień, papier, nożyce z botem. `Rps  "
+    "description":"Rock paper scissors against the bot."
 }
