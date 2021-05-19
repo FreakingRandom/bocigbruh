@@ -20,5 +20,5 @@ module.exports.run = (msg,bot,args)=>{
 
 module.exports.help = {
     'name': 'Give',
-    'description': 'Komenda dla administratorów'
+    'description': 'Adminstrator command.'
 };

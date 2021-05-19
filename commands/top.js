@@ -88,5 +88,5 @@ module.exports.run=(msg,bot,args)=>{
 
 module.exports.help = {
     'name': 'Top',
-    'description': 'Wyświetla ranking użytkowników.'
+    'description': 'Shows top users.'
 };

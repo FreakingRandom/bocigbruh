@@ -72,5 +72,5 @@ module.exports.run = (msg, bot, args) => {
 
 module.exports.help = {
     'name': 'Shop',
-    'description': 'Buy stuff with bot currency'
+    'description': 'Buy stuff with bot currency.'
 };
