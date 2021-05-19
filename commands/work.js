@@ -52,5 +52,5 @@ module.exports.run = (msg, bot, args) => {
 }
 module.exports.help = {
     "name": "Work",
-    "description": "Zarabiaj pieniądze. `work"
+    "description": "Gain bot currency by working."
 }
