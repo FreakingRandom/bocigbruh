@@ -48,6 +48,7 @@ module.exports.run = (msg, bot, args) => {
            */ case '3':
 				const poziomkop = userdata.getUserData(msg.member.id).koparka || 0
                 const cenakoparki = 30000+1000*poziomkop*poziomkop
+                const BotCoin = userdata.getUserData(msg.member.id).BotCoin || 0
                 if (money >= cenakoparki) {
                     userdata.setUserData(msg.member.id, "money", money - cenakoparki)
                     
@@ -55,6 +56,7 @@ module.exports.run = (msg, bot, args) => {
                     if (poziomkop == 0) {
                         msg.reply(`You've bought cryptominer for ${cenakoparki} :dollar:`)
 						userdata.setUserData(msg.author.id, "LastMined", new Date().toString())
+                        userdata.setUserData(msg.author.id, 'BotCoin', 0)
                     } else {
                         const lvlup = (poziomkop + 1).toString()
 						

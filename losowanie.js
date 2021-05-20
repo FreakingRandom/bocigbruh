@@ -1,8 +1,9 @@
-var cron = require("cron");
+/* eslint-disable no-unused-vars */
+var cron = require('cron');
 
 function test() {
-  console.log("Action executed.")
-  ;
+	console.log('Action executed.')
+	;
 }
 
 let job1 = new cron.CronJob('01 05 01,13 * * *', test); // fires every day, at 01:05:01 and 13:05:01
