@@ -26,8 +26,8 @@ module.exports.run = (msg, bot, args) => {
 		}
 		const embed = new discord.MessageEmbed();
 		embed.setTitle('Shop :shopping_cart:');
-		embed.addField('ID: :one: Rank-up  :one::zero::zero::zero::zero::zero:', 'Buy yourself a rank to show off.');
-		embed.addField('ID: :two: Lottery ticket  :one::zero::dollar: ', 'W.I.P');
+		embed.addField('ID: :one: Rank-up  :one::zero::zero::zero::zero::zero: :dollar:', 'Buy yourself a rank to show off.');
+		embed.addField('ID: :two: Lottery ticket  :one::zero: :dollar: ', 'W.I.P');
 		embed.addField(`ID: :three: Cryptominer ${cenakoparki} :dollar: `, 'Build your own crypto farm.');
 		embed.setColor('#cc2c16');
 		msg.channel.send(embed);
