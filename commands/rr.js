@@ -10,7 +10,7 @@ module.exports.run = (msg, bot, args) => {
     const zczytywanko = userdata.getUserData(msg.member.id);
     const money = zczytywanko.money;
     if (userPlaying.includes(msg.author.id)) {
-        msg.reply('Moge wygenerować tylko 1 ruletkę na raz. Proszę zaczekaj chwilę.');
+        msg.reply('I can generate only 1 roulette at a time. Please wait a while.');
 
         return;
     }
@@ -62,7 +62,6 @@ module.exports.run = (msg, bot, args) => {
                     switch (finish) {
                     case options[0]:
                         msg.member.kick('U died! Respawn?');
-                        msg.channel.send('Rzućcie mu link: https://discord.gg/y3JApZSpYd');
                         embed.setDescription(`You died :skull: ${options[0]}`);
                         break;
                     case options[1]:
@@ -71,7 +70,7 @@ module.exports.run = (msg, bot, args) => {
                         const money = dane.money;
                         const strata = Math.round(Math.random() * -1000 - 750);
                         userdata.setUserData(UserID, 'money', money + strata);
-                        embed.setDescription(`Straciłeś ${strata} :dollar:`);
+                        embed.setDescription(`You lost ${strata} :dollar:.`);
                         break;
                     case options[2]:
 
@@ -79,10 +78,10 @@ module.exports.run = (msg, bot, args) => {
                         const kasa = data.money;
                         const zarobek = Math.round(Math.random() * 1000 + 750);
                         userdata.setUserData(UserID, 'money', kasa + zarobek);
-                        embed.setDescription(`Wygrałeś ${zarobek} :dollar:`);
+                        embed.setDescription(`You won ${zarobek} :dollar:.`);
                         break;
                     case options[3]:
-                        embed.setDescription('*świerszcz noises*');
+                        embed.setDescription('Nothing. Litteraly nothing.');
                         break;
                     }
                     m.edit(embed);
@@ -92,12 +91,12 @@ module.exports.run = (msg, bot, args) => {
         
     } 
     else{
-        msg.channel.send(`Nie masz wystarczającej ilości pieniędzy.`)
+        msg.channel.send(`You don't have enough money.`)
         
     }  
 };
 
 module.exports.help = {
     'name': 'Rr',
-    'description':'Ruletka z ciekawymi nagrodami, ale także z możliwością przegrania. `rr',
+    'description':'Russian roulette but not that harsh.',
 };
