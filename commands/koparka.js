@@ -16,7 +16,7 @@ module.exports.run = (msg, bot, args) => {
 	} else {
 		const maxmoney = 0.1 + lvl/1000;
         
-		let iloscpieniedzywkoparce = Math.round(czasuplyniety * 1.1 * lvl * 100)/1000000;
+		let iloscpieniedzywkoparce = Math.round(czasuplyniety * 1.1 * lvl * 100)/100000;
 		iloscpieniedzywkoparce = iloscpieniedzywkoparce >= maxmoney ? maxmoney : iloscpieniedzywkoparce;
 		switch (args[0]) {
 		case 'collect':
