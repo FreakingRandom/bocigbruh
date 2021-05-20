@@ -26,30 +26,33 @@ module.exports.run = (msg, bot, args) => {
 		}
 		const embed = new discord.MessageEmbed();
 		embed.setTitle('Shop :shopping_cart:');
-		embed.addField('ID: :one: Rank-up  :regional_indicator_o::regional_indicator_u::regional_indicator_t: :regional_indicator_o::regional_indicator_f: :regional_indicator_s::regional_indicator_t::regional_indicator_o::regional_indicator_c::regional_indicator_k: ', 'W.I.P');
-		//Zrobic jakis wzor ktory NIE AŻ TAK ostro idzie w góre zaczynamy od 1 miliona  zeby bylo jakies osiagniecie
+		embed.addField('ID: :one: Rank-up  :one::zero::zero::zero::zero::zero:', 'Buy yourself a rank to show off.');
 		embed.addField('ID: :two: Lottery ticket  :one::zero::dollar: ', 'W.I.P');
-		embed.addField(`ID: :three: Cryptominer ${cenakoparki} :dollar: `, 'Build your own crypto farm');
+		embed.addField(`ID: :three: Cryptominer ${cenakoparki} :dollar: `, 'Build your own crypto farm.');
 		embed.setColor('#cc2c16');
 		msg.channel.send(embed);
 	} else {
 		switch (args[0]) {
-		/* case '1':
-                if (money >= 5000) {
-                    userdata.setUserData(msg.member.id, 'money', money - 5000);
-                    const ranga = rankup.rankup(msg.member);
-                    const ranganame = ranga.name;
+			case '1':
+				const ranga = rankup.rankup(bot,msg.member);
+				if(ranga == undefined){
+					msg.reply('You already have the highest obtainable rank.')
+					return;
+				}
+                if (money >= 100000) {
+                    userdata.setUserData(msg.member.id, 'money', money - 100000);
+                    const ranganame = ranga.name
                     setTimeout(() => {
-                        msg.channel.send(`Zakupiłeś ${ranganame}.Twój balans wynosi teraz ${userdata.getUserData(msg.member.id).money} :dollar: .`);
+                        msg.channel.send(`You've bought rank - ${ranganame}. Your balance is now ${userdata.getUserData(msg.member.id).money} :dollar: .`);
                     }, 20);
 
                 } else {
                     msg.channel.send('Nie masz wystarczająco pieniędzy');
                 }
                 break;
-           */ case '3':
+           case '3':
 			const poziomkop = userdata.getUserData(msg.member.id).koparka || 0;
-			const cenakoparki = 30000+1000*poziomkop*poziomkop;
+			const cenakoparki = 50000+1000*poziomkop*poziomkop;
 			if(poziomkop >= 50){
 				msg.reply('You have maxed out your crypto miner.');
 			}
@@ -63,11 +66,11 @@ module.exports.run = (msg, bot, args) => {
 				}else {
 					const lvlup = (poziomkop + 1).toString();
 						
-					msg.reply(`You've upgraded your cryptominer level to ${lvlup} for ${cenakoparki} :dollar:` );
+					msg.reply(`You've upgraded your cryptominer level to ${lvlup} for ${cenakoparki} :dollar:.` );
 				}
 			}
 			else {
-				msg.reply('You don\'t have enough :dollar:');
+				msg.reply('You don\'t have enough :dollar:.');
 			}
 			break;
 		}

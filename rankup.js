@@ -9,7 +9,7 @@ module.exports.rankup=(bot,user)=>{
 		const newrole = user.guild.roles.cache.find(f=>f.name==ranks[i]);
 		if(!roles.some(r=>r.name==ranks[i])){
 			user.roles.add(newrole);
-			break;
+			return newrole;
 		}
 	}
 };

@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+const fluctuations = require('../sus');
 const discord = require('discord.js');
 const userdata = require('../userdata.js');
 module.exports.run = (msg, bot, args) => {
+	const przelicznik = Math.round(fluctuations.calculate(new Date().getTime()/600000)*1000);
 	const zczytywansko = userdata.getUserData(msg.author.id);
 	const LastMined = new Date(zczytywansko.LastMined) || new Date();
 	const lvl = zczytywansko.koparka || 0;
@@ -30,10 +32,47 @@ module.exports.run = (msg, bot, args) => {
 		case 'lvl':
 			msg.reply(`Your cryptominer is on level ${lvl}.`);
 			break;
-		default:
-			msg.channel.send(`You have accumulated ${iloscpieniedzywkoparce} :coin: | ${Math.round(iloscpieniedzywkoparce/maxmoney*10000)/100}% in your cryptominer.`);
+		case 'rate':
+			msg.reply(`Current exchange rate is ${przelicznik}.`);
 			break;
+		case 'exchange':
+			if(args[1]==undefined){
+				msg.reply(`Please enter a valid number.`);
+			}
+			else{
+				if(isNaN(args[1])){
+					msg.reply('Please enter a valid number.');
+				}
+				else{
+					const numer = parseFloat(args[1]);
+					if(numer > BotCoin){
+						msg.reply(`You can't exchange more than you have.`);
+					}
+					else{
+						const botexchange = iloscpieniedzywkoparce*przelicznik;
+						iloscpieniedzywkoparce -= botexchange;
+						userdata.setUserData(msg.author.id,'BotCoin', BotCoin - numer);
+						userdata.setUserData(msg.author.id,'money', money + botexchange);
+						msg.reply(`You've just exchanged ${numer} :coin: to ${Math.round(botexchange)} :dollar:.`);
+					}
+				}
+			}
+			break;
+		case 'status':
+			msg.channel.send(`You have accumulated ${iloscpieniedzywkoparce} :coin: | ${Math.round(iloscpieniedzywkoparce/maxmoney*10000)/100}% in your cryptominer and that is ${Math.round(przelicznik*iloscpieniedzywkoparce)} :dollar:.`);
+			break;
+		default:
+			const embed = new discord.MessageEmbed()
+			embed.setTitle('Cryptominer');
+			embed.addField('Collect','Collects your accumulated Botcoin into your bank account.')
+			embed.addField('Max','Shows your maximum capacity of Botcoin in your cryptominer.')
+			embed.addField('Rate','Shows acctual BotCoin (:coin:) to dollars (:dollar:) exchange ratio.')
+			embed.addField('Lvl','Shows your acctual cryptominer level.')
+			embed.addField('Exchange','Exchanges BotCoin (:coin:) from your bank into dollars (:dollar:)')
+			embed.setColor('#DCAB00')
+			msg.channel.send(embed)
 		}
+		
 	}
 
 };
