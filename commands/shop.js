@@ -10,7 +10,7 @@ module.exports.run = (msg, bot, args) => {
 	//args.length długość argumentów
 	if (args.length == 0) {
 		const poziomkop = userdata.getUserData(msg.member.id).koparka || 0;
-		let cenakoparki = 30000+1000*poziomkop*poziomkop;
+		let cenakoparki = 50000+1000*poziomkop*poziomkop;
 		{
 			cenakoparki = cenakoparki.toString();
 			cenakoparki = cenakoparki.replaceAll('0',':zero:');
