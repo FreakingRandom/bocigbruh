@@ -14,7 +14,7 @@ module.exports.run = (msg, bot, args) => {
 		msg.channel.send('You need to buy a cryptominer to use this command!');
 		userdata.setUserData(msg.member.id,'koparka',0);
 	} else {
-		const maxmoney = 0.1 + lvl/1000;
+		const maxmoney = 1 + (lvl*lvl)/1000;
         
 		let iloscpieniedzywkoparce = Math.round(czasuplyniety * 1.1 * lvl * 100)/100000;
 		iloscpieniedzywkoparce = iloscpieniedzywkoparce >= maxmoney ? maxmoney : iloscpieniedzywkoparce;
