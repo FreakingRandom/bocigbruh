@@ -49,8 +49,7 @@ module.exports.run = (msg, bot, args) => {
 						msg.reply(`You can't exchange more than you have.`);
 					}
 					else{
-						const botexchange = iloscpieniedzywkoparce*przelicznik;
-						iloscpieniedzywkoparce -= botexchange;
+						const botexchange = BotCoin*przelicznik;
 						userdata.setUserData(msg.author.id,'BotCoin', BotCoin - numer);
 						userdata.setUserData(msg.author.id,'money', money + botexchange);
 						msg.reply(`You've just exchanged ${numer} :coin: to ${Math.round(botexchange)} :dollar:.`);
